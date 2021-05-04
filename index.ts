@@ -45,7 +45,7 @@ client.on("message", async (ctx) => {
     }
 });
 
-client.login(config.token); // Авторизуем бота
+client.login(config.token?config.token:process.env.token); // Авторизуем бота
 
 function getMinMax(min, max) { // Функция для рандомного числа из интервала
     min = Math.ceil(min); // Округление в большую сторону
